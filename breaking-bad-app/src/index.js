@@ -1,16 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import { Router } from "react-router";
+import { BrowserRouter as Router } from "react-router-dom";
 import "./scss/index.scss";
 import Layout from "./common/components/layout";
-import history from "./common/helper/history";
 import store from "./store";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={history}>
+    <Router>
       <Layout />
     </Router>
   </Provider>,

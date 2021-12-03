@@ -7,6 +7,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import { FormattedMessage } from "react-intl";
 
 const RowTable = React.memo(({ name, value }) => (
   <TableRow
@@ -30,17 +31,43 @@ const DetailsTable = React.memo(({ details }) => (
           </TableRow>
         </TableHead>
         <TableBody>
-          <RowTable name="Marca" value={details.brand} />
-          <RowTable name="Modelo" value={details.model} />
-          <RowTable name="Precio" value={details.price} />
-          <RowTable name="CPU" value={details.cpu} />
-          <RowTable name="RAM" value={details.ram} />
-          <RowTable name="SO" value={details.os} />
-          <RowTable name="Resolucion" value={details.displayResolution} />
-          <RowTable name="Bateria" value={details.battery} />
-          <RowTable name="Camara" value={details.primaryCamera} />
-          <RowTable name="Dimensiones" value={details.dimentions} />
-          <RowTable name="Peso" value={details.weight} />
+          <RowTable
+            name={<FormattedMessage id="name" defaultMessage="Name" />}
+            value={details?.name}
+          />
+          <RowTable
+            name={<FormattedMessage id="nickname" defaultMessage="Nickname" />}
+            value={details?.nickname}
+          />
+          <RowTable
+            name={
+              <FormattedMessage id="portrayed" defaultMessage="Portrayed" />
+            }
+            value={details?.portrayed}
+          />
+          <RowTable
+            name={<FormattedMessage id="birthday" defaultMessage="Birthday" />}
+            value={details?.birthday}
+          />
+          <RowTable
+            name={<FormattedMessage id="status" defaultMessage="Status" />}
+            value={details?.status}
+          />
+          {details?.occupation?.map((e, index) =>
+            index === 0 ? (
+              <RowTable
+                name={
+                  <FormattedMessage
+                    id="ocuppation"
+                    defaultMessage="Ocuppation"
+                  />
+                }
+                value={e}
+              />
+            ) : (
+              <RowTable value={e} />
+            )
+          )}
         </TableBody>
       </Table>
     </TableContainer>

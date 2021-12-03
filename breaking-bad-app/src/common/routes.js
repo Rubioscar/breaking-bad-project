@@ -1,15 +1,19 @@
 import React from "react";
-import { Route } from "react-router-dom";
-import ListPage from "./components/pages/listPage";
-import DetailsPage from "./components/pages/detailsPage";
+import { Route, Redirect } from "react-router-dom";
+import ListPage from "./pages/listPage";
+import DetailsPage from "./pages/detailsPage";
+import ErrorPage from "./pages/errorPage";
 
 export default () => (
   <>
-    <Route path="/list">
-      <ListPage />
-    </Route>
-    <Route path="/details/:id" exact>
-      <DetailsPage />
+    <Route path="/list" component={ListPage} />
+
+    <Route path="/details/:id" component={DetailsPage} />
+
+    <Route path="/error" component={ErrorPage} />
+
+    <Route exact path="/">
+      <Redirect to="/list" />
     </Route>
   </>
 );

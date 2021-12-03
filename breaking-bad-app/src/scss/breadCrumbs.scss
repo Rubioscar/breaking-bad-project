@@ -1,0 +1,35 @@
+.breadCrumbs {
+    margin-left: 30px;
+    font-size: 18px;
+    height: 100%;
+    display: flex;
+  .breadCrumbDiv{
+    display: flex;
+    .breadCrumbSeparator {
+        color: #febd69;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        margin: 0 10px;
+        padding-top: 10px;
+    }
+
+    .breadCrumbElement {
+      display: flex;
+      height: 100%;
+      border-top: 10px solid white;
+
+      .titleHeader {
+        color: #ffff;
+        align-self: center;
+      }
+    }
+
+    .elementSelected {
+        border-top: 10px solid #f08804;
+        .titleHeader {
+            color: #f08804;
+        }
+    }
+  }
+  }

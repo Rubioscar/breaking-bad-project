@@ -10,36 +10,34 @@ body{
 }
 
 .container {
-    width: 100%;
-    height: 94vh;
     display: flex;
     flex-wrap: wrap;
     .image{
-        width: 50%;
+        padding-top: 6%;
         display: flex;
         justify-content: center;
-        align-items: center;
-        .img{
-            padding-bottom: 40%;
-            padding-left: 40%;
-        }
+        width: 50%;
+        max-height: 800px;
+        object-fit: contain;
         img{
-            transform: scale(2);
-            border-color: black;
-            border-width: 5px;
+            object-fit: contain;
         }
     }
     .info{
         width: 50%;
+        .text {
+            flex-direction: column;
+            display: flex;
+            height: 30%;
+            justify-content: center;
+            padding: 4%;
+            color: slategrey;
+        }
         .details{
             padding-top: 8%;
             width: 60%;
-        }
-        .actions{
-            display: flex;
-            padding-top: 5%;
-            button{
-                margin-left: 2%;
+            .css-11xur9t-MuiPaper-root-MuiTableContainer-root{
+                background-color: unset;
             }
         }
     }
@@ -62,6 +60,15 @@ body{
         width: 100%;
         .details{
             width: 100%;
+        }
+        .actions{
+            span{
+                margin-left: 3px;
+            }
+            .select {
+                margin-left: 30px;
+                width: 20vw;
+            }
         }
     }
 }

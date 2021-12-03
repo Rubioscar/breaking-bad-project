@@ -1,27 +1,39 @@
 import "scss/header.scss";
-import React from "react";
-import history from "common/helper/history";
-// import BreadCrumbs from "@/common/components/breadCrumbs";
-// import NotificationIcon from "./notificationIcon";
+import React, { useContext } from "react";
+import { useHistory } from "react-router-dom";
+import BreadCrumbs from "common/components/breadCrumbs";
+import LanguageContext from "common/context/language";
 
-const Header = React.memo(() => (
-  <div className="header">
-    <nav className="">
-      <div className="boxlogotitle">
-        <div
-          className="redirect"
-          onClick={() => history.push("/userworkspace/view")}
-        >
-          Test Project
+const Header = React.memo(() => {
+  const history = useHistory();
+  const { locale, setLocale } = useContext(LanguageContext);
+  return (
+    <div className="header">
+      <nav className="nav">
+        <div className="boxlogotitle">
+          <div className="title" onClick={() => history.push("/list")}>
+            Breaking Bad App
+          </div>
+          <BreadCrumbs />
         </div>
-        {/* <BreadCrumbs /> */}
-      </div>
 
-      <div className="boxMenuUser">
-        <div className="menuUser">{/* <NotificationIcon /> */}</div>
-      </div>
-    </nav>
-  </div>
-));
+        <div className="language">
+          <span
+            onClick={() => setLocale("en")}
+            className={locale === "en" ? "active" : ""}
+          >
+            en
+          </span>
+          <span
+            onClick={() => setLocale("es")}
+            className={locale === "es" ? "active" : ""}
+          >
+            es
+          </span>
+        </div>
+      </nav>
+    </div>
+  );
+});
 
 export default Header;
