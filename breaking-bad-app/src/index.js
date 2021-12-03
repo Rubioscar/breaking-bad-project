@@ -8,12 +8,10 @@ import history from "./common/helper/history";
 import store from "./store";
 import reportWebVitals from "./reportWebVitals";
 
-const appRoutes = () => <>Nada</>;
-
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
-      <Layout routes={appRoutes} />
+      <Layout />
     </Router>
   </Provider>,
   document.getElementById("root")

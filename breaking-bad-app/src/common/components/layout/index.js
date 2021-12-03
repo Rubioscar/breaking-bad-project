@@ -1,8 +1,9 @@
 import React from "react";
 import { Switch } from "react-router-dom";
+import Routes from "common/routes";
 import Header from "./header";
 
-const Layout = ({ routes }) => (
+const Layout = () => (
   //   const loading = useSelector(state => state.common.loading);
   //   const dispatch = useDispatch();
 
@@ -10,7 +11,9 @@ const Layout = ({ routes }) => (
     <Header />
 
     <div className="containerAplication">
-      <Switch>{routes()}</Switch>
+      <Switch>
+        <Routes />
+      </Switch>
     </div>
   </>
 );
