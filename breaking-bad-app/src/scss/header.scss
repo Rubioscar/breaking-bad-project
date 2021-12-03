@@ -1,0 +1,32 @@
+.header {
+    background-color: red;
+    width: 100%; 
+    position: fixed; 
+    right: 0px; 
+    top: 0px;     
+    z-index: 1;
+    height: 50px;
+    .boxlogotitle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-left: 20px;
+      flex-grow: none;
+      height: 50px;
+    }
+  
+    .boxMenuUser {
+      color: blue;
+      font-size: 18px;
+      font-weight: bold;
+      margin-right: 20px;
+      .menuUser {
+        cursor: pointer;
+        margin-left: 10px;
+        .menuUserdrop svg {
+          font-size: 12px;
+          margin-left: 5px;
+        }
+      }
+    }
+  }
